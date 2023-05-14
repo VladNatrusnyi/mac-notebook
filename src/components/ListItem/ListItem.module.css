@@ -1,0 +1,32 @@
+
+.wrapper {
+    width: 100%;
+    margin-bottom: 5px;
+    border: 1px solid red;
+}
+
+.wrapper:hover {
+    cursor: pointer;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.time {
+    margin-right: 10px;
+    flex: 1 1 600px;
+}
+
+.bottomWrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+
+.text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

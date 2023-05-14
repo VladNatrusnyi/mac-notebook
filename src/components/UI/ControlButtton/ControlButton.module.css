@@ -1,0 +1,18 @@
+.wrapper {
+    width: 45px;
+    height: 35px;
+    background: lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: none;
+}
+
+.wrapper:hover {
+    cursor: pointer;
+}
+
+.disabled:hover {
+    cursor: no-drop;
+}

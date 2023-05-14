@@ -11,3 +11,107 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+
+
+
+
+.container {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "header header"
+    "sidebar main";
+  height: 100vh;
+}
+
+.header {
+  grid-area: header;
+  background-color: gray;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-controls-btn-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.sidebar {
+  overflow-x: hidden;
+  overflow-y: auto;
+  grid-area: sidebar;
+  background-color: #eeecec;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid gray;
+}
+
+.main {
+  overflow: auto;
+  grid-area: main;
+  padding: 1rem;
+  background-color: #eeecec;
+  word-break: break-word;
+}
+
+/* Затемнення заднього фону */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.backdrop.show {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "header"
+      "main";
+  }
+
+  .sidebar {
+    grid-area: unset;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 20;
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+  }
+
+  /* Затемнення заднього фону */
+  .backdrop {
+    display: none;
+  }
+
+  .backdrop.show {
+    display: block;
+  }
+}
