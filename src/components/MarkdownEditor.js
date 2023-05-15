@@ -1,16 +1,14 @@
-import ReactMarkdown from 'react-markdown';
-import {useContext, useEffect, useRef, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import Context from "../Context";
 
 export const MarkdownEditor = ({body, postId}) =>  {
 
-  const {updateData, posts} = useContext(Context)
+  const {updateData} = useContext(Context)
 
 
   const [inputBody, setInputBody] = useState('');
-
 
   const modules = {
     toolbar: [
@@ -32,7 +30,6 @@ export const MarkdownEditor = ({body, postId}) =>  {
     'link',
     'image',
   ];
-
 
 
   useEffect(() => {
@@ -58,7 +55,6 @@ export const MarkdownEditor = ({body, postId}) =>  {
         formats={formats}
         placeholder="Введіть текст..."
       />
-      {/*{title && <h1>Заголовок: {title}</h1>}*/}
     </div>
   );
 }

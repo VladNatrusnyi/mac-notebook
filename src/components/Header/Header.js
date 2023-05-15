@@ -2,7 +2,7 @@ import {useContext} from "react";
 import Context from "../../Context";
 import {ControlButton} from "../UI/ControlButtton/ControlButton";
 import {BurgerButton} from "../UI/BurgerButton/BurgerButton";
-import {SearchInput} from "../SearchInput";
+import {SearchInput} from "../SearchInput/SearchInput";
 import {useMediaQuery} from "@material-ui/core";
 
 export const Header = () => {

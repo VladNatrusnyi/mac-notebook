@@ -36,13 +36,6 @@ export const MainContent = () => {
           :
           <div>Select a note</div>
       }
-
-
-      {/*<h2>Main Content</h2>*/}
-      {/*<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>*/}
-      {/*<SearchInput />*/}
-      {/*<br/>*/}
-      {/*<textarea></textarea>*/}
     </div>
   )
 }

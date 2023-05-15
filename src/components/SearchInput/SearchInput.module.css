@@ -1,0 +1,25 @@
+.wrapper {
+    position: relative;
+}
+
+.input {
+    border-radius: 15px;
+    padding: 10px 20px;
+    background-color: #f2f2f2;
+    border: none;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.clearBtn{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    cursor: pointer;
+    outline: none;
+}

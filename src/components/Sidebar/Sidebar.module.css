@@ -3,7 +3,6 @@
     overflow-y: auto;
     grid-area: sidebar;
     background-color: #eeecec;
-    /*padding: 1rem;*/
     display: flex;
     flex-direction: column;
     border-right: 1px solid gray;

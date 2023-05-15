@@ -1,5 +1,6 @@
 import {useContext, useEffect, useState} from "react";
-import Context from "../Context";
+import Context from "../../Context";
+import styles from './SearchInput.module.css'
 
 export const SearchInput = () => {
   const {setPosts, posts, postsFromDB} = useContext(Context)
@@ -24,36 +25,18 @@ export const SearchInput = () => {
 
 
   return (
-    <div style={{ position: 'relative' }}>
+    <div className={styles.wrapper}>
       <input
         type="text"
         value={text}
         onChange={e => setText(e.target.value)}
         placeholder="Пошук"
-        style={{
-          borderRadius: '15px',
-          padding: '10px 20px',
-          backgroundColor: '#f2f2f2',
-          border: 'none',
-          outline: 'none',
-          width: '100%',
-          boxSizing: 'border-box',
-          textAlign: 'center'
-        }}
+        className={styles.input}
       />
       {text && (
         <button
           onClick={() => setText('')}
-          style={{
-            position: 'absolute',
-            right: '10px',
-            top: '50%',
-            transform: 'translateY(-50%)',
-            border: 'none',
-            background: 'none',
-            cursor: 'pointer',
-            outline: 'none'
-          }}
+          className={styles.clearBtn}
         >
           <i className="bi bi-x-circle"></i>
         </button>
