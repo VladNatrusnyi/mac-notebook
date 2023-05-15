@@ -3,15 +3,21 @@ import {TimeAgo} from "../TimeAgo/TimeAgo";
 import Context from "../../Context";
 import {useContext} from "react";
 import {getPostBody, getPostTitle} from "../../helpers/getPostTitle";
-import parse from "html-react-parser";
+
 export const ListItem = ({post, idx}) => {
-  const {activePostId, setActivePostId, posts, setIsEditing} = useContext(Context)
+  const {
+    activePostId,
+    setActivePostId,
+    setIsEditing,
+    handleSidebarToggle
+  } = useContext(Context)
 
   const title = getPostTitle(post.body, idx)
 
   const postHandler = () => {
     setIsEditing(false)
     setActivePostId(post.id)
+    handleSidebarToggle()
   }
 
   return (
@@ -20,7 +26,6 @@ export const ListItem = ({post, idx}) => {
       <div className={styles.bottomWrapper}>
         <div className={styles.time}>
           <TimeAgo myTime={post.date}/>
-          {/*{post.date.toLocaleDateString()}*/}
         </div>
         <div className={styles.text}>
           {getPostBody(post.body)}

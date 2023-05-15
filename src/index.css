@@ -30,7 +30,7 @@ code {
 
 .header {
   grid-area: header;
-  background-color: gray;
+  background-color: #ababab;
   color: #fff;
   padding: 1rem;
   display: flex;
@@ -43,16 +43,17 @@ code {
   gap: 15px;
 }
 
-.sidebar {
-  overflow-x: hidden;
-  overflow-y: auto;
-  grid-area: sidebar;
-  background-color: #eeecec;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  border-right: 1px solid gray;
-}
+/*.sidebar {*/
+/*  overflow-x: hidden;*/
+/*  overflow-y: auto;*/
+/*  grid-area: sidebar;*/
+/*  background-color: #eeecec;*/
+/*  !*padding: 1rem;*!*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  border-right: 1px solid gray;*/
+/*}*/
+
 
 .main {
   overflow: auto;
@@ -88,23 +89,23 @@ code {
       "main";
   }
 
-  .sidebar {
-    grid-area: unset;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 80%;
-    height: 100%;
-    background-color: #333;
-    color: #fff;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
-    z-index: 20;
-  }
+  /*.sidebar {*/
+  /*  grid-area: unset;*/
+  /*  position: fixed;*/
+  /*  top: 0;*/
+  /*  left: 0;*/
+  /*  width: 80%;*/
+  /*  height: 100%;*/
+  /*  background-color: #333;*/
+  /*  color: #fff;*/
+  /*  transform: translateX(-100%);*/
+  /*  transition: transform 0.3s ease-in-out;*/
+  /*  z-index: 20;*/
+  /*}*/
 
-  .sidebar.show {
-    transform: translateX(0);
-  }
+  /*.sidebar.show {*/
+  /*  transform: translateX(0);*/
+  /*}*/
 
   /* Затемнення заднього фону */
   .backdrop {

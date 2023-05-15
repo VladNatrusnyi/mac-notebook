@@ -1,8 +1,7 @@
 
 .wrapper {
-    width: 100%;
-    margin-bottom: 5px;
-    border: 1px solid red;
+    border-bottom: 1px solid #ababab;
+    padding: 5px 20px;
 }
 
 .wrapper:hover {

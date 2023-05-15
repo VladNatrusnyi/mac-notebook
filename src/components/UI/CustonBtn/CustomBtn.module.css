@@ -1,0 +1,12 @@
+.wrapper {
+    /*width: 300px;*/
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    background: lightgray;
+    border-radius: 10px;
+    border: none;
+}
+
+.wrapper:hover {
+    cursor: pointer;
+}

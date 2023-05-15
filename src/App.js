@@ -28,29 +28,13 @@ function App() {
 
   const [posts, setPosts] = useState([]);
   const [activePostId, setActivePostId] = useState(null);
-
   const [isEditing, setIsEditing] = useState(false);
-
-
-
 
   const postsFromDB = useLiveQuery(() => db.myStore.toArray(), []);
 
   useEffect(() => {
     setPosts(postsFromDB)
   }, [postsFromDB])
-
-
-
-  const checkDatabaseExists = async () => {
-    const exists = await db.exists();
-    console.log('Database exists:', exists);
-  };
-
-  const fetchData = async () => {
-    const data = await db.myStore.toArray();
-    console.log('Data:', data);
-  };
 
   const addData = async () => {
     const newData = {
@@ -98,18 +82,15 @@ function App() {
   };
 
 
-
-
-
-  const value = {
+  const contextValue = {
     isMobile,
     handleSidebarToggle,
     showSidebar,
     posts,
-
+    setPosts,
+    postsFromDB,
     activePostId,
     setActivePostId,
-
     isEditing,
     setIsEditing,
 
@@ -119,7 +100,7 @@ function App() {
   }
 
   return (
-    <Context.Provider value={value}>
+    <Context.Provider value={contextValue}>
       {isMobile && (
         <div
           className={`backdrop ${showSidebar ? "show" : ""}`}
@@ -127,15 +108,13 @@ function App() {
         />
       )}
 
-
       <div className="container">
         <Header />
 
         <Sidebar />
 
         <MainContent />
-        {/*<br/>*/}
-        {/*<button onClick={addData}>sdvfdsvdac</button>*/}
+
       </div>
     </Context.Provider>
   );

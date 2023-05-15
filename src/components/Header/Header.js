@@ -2,24 +2,20 @@ import {useContext} from "react";
 import Context from "../../Context";
 import {ControlButton} from "../UI/ControlButtton/ControlButton";
 import {BurgerButton} from "../UI/BurgerButton/BurgerButton";
+import {SearchInput} from "../SearchInput";
+import {useMediaQuery} from "@material-ui/core";
 
 export const Header = () => {
-  const {isMobile, handleSidebarToggle, activePostId, setIsEditing, addData, deleteData} = useContext(Context)
+  const {
+    isMobile,
+    handleSidebarToggle,
+    activePostId,
+    setIsEditing,
+    addData,
+    deleteData,
+  } = useContext(Context)
 
-  function searchPosts(input, arrayOfObjects) {
-    const results = [];
-
-    for (let i = 0; i < arrayOfObjects.length; i++) {
-      const object = arrayOfObjects[i];
-
-      if (object.hasOwnProperty('body') && object.body === input) {
-        results.push(object);
-      }
-    }
-
-    return results;
-  }
-
+  const isSmallScreen = useMediaQuery('(max-width: 768px)');
 
   return (
     <div className="header">
@@ -32,6 +28,8 @@ export const Header = () => {
         <ControlButton onClick={() => deleteData(activePostId)} icon={'bi-trash3'} disabled={!activePostId}/>
         <ControlButton onClick={() => setIsEditing(true)} icon={'bi-pencil-square'} disabled={!activePostId}/>
       </div>
+
+      { !isSmallScreen && <SearchInput /> }
 
     </div>
   )

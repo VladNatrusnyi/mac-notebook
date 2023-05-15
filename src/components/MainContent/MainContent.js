@@ -1,14 +1,17 @@
-import {SearchInput} from "../SearchInput";
 import Context from "../../Context";
 import {useContext, useMemo} from "react";
 import {MarkdownEditor} from "../MarkdownEditor";
 import parse from 'html-react-parser';
-
+import {CustomBtn} from "../UI/CustonBtn/CustomBtn";
 
 
 export const MainContent = () => {
-  const {activePostId, posts, isEditing, setIsEditing} = useContext(Context)
-  // const postData = posts && posts.find(el => el.id === activePostId)
+  const {
+    activePostId,
+    posts,
+    isEditing,
+    setIsEditing
+  } = useContext(Context)
 
   const postData = useMemo(() => {
     if (posts) {
@@ -23,7 +26,7 @@ export const MainContent = () => {
           isEditing
             ?
             <>
-              <button onClick={() => setIsEditing(false)}>Завершити редагування</button>
+              <CustomBtn title={'Завершити редагування'} onClick={() => setIsEditing(false)}/>
               <MarkdownEditor body={postData.body} postId={postData.id}/>
             </>
             :
